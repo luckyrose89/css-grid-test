@@ -11,12 +11,36 @@
     <div id="wrapper">
         <header>CSS GRID Gallery</header>
         <div id="carousel">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
+            <img class="myslides" src="img/slideone.png">
+            <img class="myslides" src="img/slidetwo.png">
+            <img class="myslides" src="img/slidethree.png">
         </div>
-        <main></main>
+        <div id="gallery">
+                <a href="html/mosaic.html"><img class="imageone" src="img/slideone-mini.png"></a>
+                <a href="html/grid-areas.html"><img class="imagetwo" src="img/slidetwo-mini.png"></a>
+                <a href="html/nestedgrids.html"><img class="imagethree" src="img/slidethree-mini.png"></a>
+        </div>
         <footer>Made with &#9829; by <a href="https://github.com/luckyrose89">Divya Mathur</a></footer>
-    </div>   
+    </div>
+    <script>
+        var slideIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("myslides");
+            for(i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+
+            slideIndex++;
+
+            if (slideIndex > x.length) {
+                slideIndex = 1;
+            } 
+            x[slideIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000);
+        }
+    </script>   
 </body>
 </html>
